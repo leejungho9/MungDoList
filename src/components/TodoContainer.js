@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const TodoContainerBlock = styled.div`
-    width: 390px;
+    width: 400px;
     height: 844px;
 
     margin: 0 auto;
