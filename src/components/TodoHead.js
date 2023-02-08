@@ -11,6 +11,7 @@ const TodoHeadBlock = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: #fffff9;
+  box-sizing: border-box;
 `;
 const LogoIcon = styled.img`
   width: 20px;
