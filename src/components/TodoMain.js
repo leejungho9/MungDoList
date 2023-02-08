@@ -44,12 +44,8 @@ const MainDesc = styled.span`
   color: #3E3E3E;
 `
 
-function TodoMain(props) {
-  const [isMain, setIsMain] = useState(true);
+function TodoMain({isMain, closeMain}) {
 
-  const closeMain = () => {
-    setIsMain(false);
-  }
 
   return (
     <MainBlock onClick={closeMain} state={isMain}>
