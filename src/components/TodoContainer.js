@@ -15,6 +15,7 @@ const TodoContainerBlock = styled.div`
     flex-direction: column;
 
     border: 1px solid #3e3e3e;
+    position: relative;
 `
 
 function TodoContainer({children}) {
