@@ -1,11 +1,17 @@
-
-import './App.css';
-import TodoContainer from './components/TodoContainer';
-import TodoHead from './components/TodoHead';
-import Main from './pages/Main';
+import { useEffect } from "react";
+import { BrowserRouter, Route, useLocation } from "react-router-dom";
+import "./App.css";
+import TodoContainer from "./components/TodoContainer";
+import TodoHead from "./components/TodoHead";
+import TodoList from "./components/TodoList";
+import Main from "./pages/Main";
 function App() {
+
   return (
-    <Main/>
+    <BrowserRouter>
+      <Route path="/" component={Main} />
+      <Route path="/list" component={TodoList} />
+    </BrowserRouter>
   );
 }
 
