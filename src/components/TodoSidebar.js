@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BsArrowLeft } from "react-icons/bs";
 
 const SidebarBlock = styled.div`
+  z-index: 1;
   position: absolute;
   width: 300px;
   height: inherit;

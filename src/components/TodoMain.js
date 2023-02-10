@@ -3,9 +3,7 @@ import styled from "styled-components";
 
 const MainBlock = styled.div`
   width: 400px;
-  height: 844px;
   background-color: #fffff9;
-  height: 100%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -44,11 +42,11 @@ const MainDesc = styled.span`
   color: #3E3E3E;
 `
 
-function TodoMain({isMain, closeMain}) {
+function TodoMain({isMain, closeModalUntilExpires}) {
 
 
   return (
-    <MainBlock onClick={closeMain} state={isMain}>
+    <MainBlock onClick={closeModalUntilExpires} state={isMain} >
       <MainTitle>멍두리스트</MainTitle>
       <MainImage src="images/dog.png"/>
       <MainDesc>반려견과의 행복한 하루를 멍두리스트에 기록해보세요. Click me! </MainDesc>

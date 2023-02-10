@@ -10,8 +10,9 @@ const TodoContainerBlock = styled.div`
     margin-bottom: 100px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #3e3e3e;
+    border: 1px solid #dfdfdf;
     position: relative;
+    background-color: #fffff9;
 `
 
 function TodoContainer({children}) {

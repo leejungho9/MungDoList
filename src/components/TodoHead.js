@@ -2,7 +2,13 @@ import styled from "styled-components";
 import { HiMenu } from "react-icons/hi";
 import { useState } from "react";
 import TodoSidebar from "./TodoSidebar";
-
+const BackgroundImage = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #9d9d9d;
+  opacity: 30%;
+`
 const TodoHeadBlock = styled.div`
   padding: 0 32px;
   height: 85px;
@@ -48,8 +54,8 @@ function TodoHead(props) {
           <HiMenu size={25} />
         </IconContainer>
       </TodoHeadBlock>
-
-        { isSidebar ? <TodoSidebar isSidebar={isSidebar} setIsSidebar={setIsSidebar}/> : null }
+        { isSidebar && <BackgroundImage/>}
+        { isSidebar && <TodoSidebar isSidebar={isSidebar} setIsSidebar={setIsSidebar}/>}
     </>
   );
 }
