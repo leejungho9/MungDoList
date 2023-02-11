@@ -27,7 +27,9 @@ const AddCheckbox = styled.input.attrs({ type: "checkbox" })`
 function TodoCreate({showInput, setShowInput}) {
   const dispatch = useDispatch();
   const [addTodoText, setAddTodoText] = useState("");
-  const TodoInputRef = useRef(null);
+  const [addTodoCheck, setAddTodoCheck] = useState(false);
+  const TodoInputRef = useRef();
+
 
   useEffect(() => {
     if (TodoInputRef.current !== null) {
@@ -56,7 +58,7 @@ function TodoCreate({showInput, setShowInput}) {
     const todo = {
       title: addTodoText,
       description: null,
-      isComplete: false,
+      isCompleted: addTodoCheck,
       date: fullDate,
     };
     
@@ -64,10 +66,12 @@ function TodoCreate({showInput, setShowInput}) {
     setAddTodoText("");
     setShowInput(false);
   };
-
+  const checkboxChange = (e) => {
+    setAddTodoCheck(e.target.checked)
+  }
   return (
     <TodoCreateBlock>
-      <AddCheckbox/>
+      <AddCheckbox onChange={checkboxChange}/>
       <AddTodoInput
         ref={TodoInputRef}
         value={addTodoText}

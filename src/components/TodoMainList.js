@@ -39,6 +39,7 @@ function TodoMainList(props) {
 
   useEffect(() => {
     todayTodoList()
+    console.log(todos)
   }, [todos,fullDate] )
 
   return (

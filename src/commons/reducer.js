@@ -1,5 +1,5 @@
-import { act } from "react-dom/test-utils"
-import { ADD, DELETE } from "./actions"
+
+import { ADD, DELETE, UPDATE, TOGGLE } from "./actions"
 
 const initialState = {
   todos : [
@@ -31,6 +31,13 @@ const initialState = {
       "isCompleted": false,
       "date": "2023-02-10"
     },
+    {
+      "id": 5,
+      "title": "기관지 영양제 먹이기",
+      "description": "오늘 쩡이랑 호수공원으로 산책을 다녀왔다. 쩡이가 추워할까봐 걱정을 많이 했는데 생각보다 잘 놀아서 기분이 너무 좋았다.",
+      "isCompleted": false,
+      "date": "2023-02-11"
+    },
   ]
 }
 
@@ -45,13 +52,22 @@ export const reducer = (state = initialState, action) => {
 
   if(action.type === DELETE){
     return {
-      todos:  [...state.todos.filter((todo)=> todo.id !== action.id),] 
+      todos:  [...state.todos.filter((todo) => todo.id !== action.payload.id),] 
     }
   }
 
   if(action.type === UPDATE){
-
+    return {
+      todos : [...state.todos.map((todo) =>  todo.id === action.payload.id ? {...todo, title : action.payload.title} : todo)]
+    }
   }
 
-  return state
+  
+  if(action.type === TOGGLE){
+    return {
+      todos : [...state.todos.map((todo) => todo.id === action.payload.id ? {...todo, isCompleted : !todo.isCompleted}: todo)]
+    }
+  }
+
+  return {...state}
 }

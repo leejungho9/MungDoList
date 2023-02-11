@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { RiHeartAddLine } from "react-icons/ri";
-import { useDispatch, useSelector } from "react-redux";
-import { useReducer } from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
-import { addTodo } from "../commons/actions";
+import { RxPencil2, RxTrash } from "react-icons/rx"
+import { TfiTrash } from "react-icons/tfi";
 import TodoCreate from "./TodoCreate";
-
+import { useDispatch } from "react-redux";
+import { deleteTodo } from "../commons/actions";
 const TodoItemBlock = styled.div`
   padding: 50px 32px;
 `;
@@ -19,6 +17,19 @@ const TodoListBox = styled.div`
   padding: 10px 0;
   display: flex;
   align-items: center;
+
+  div{
+    display: none;
+  }
+
+  &:hover{
+    div {
+      display: block;
+      .icons{
+        margin: 0 5px;
+      }
+    }
+  }
 `;
 const TodoCheckbox = styled.input.attrs({ type: "checkbox" })`
   width: 18px;
@@ -30,11 +41,23 @@ const TodoLabel = styled.label`
   font-size: 20px;
   font-family: "Gowun Dodum";
   cursor: pointer;
+  flex-grow: 2;
   text-decoration: ${(props) => props.checked ? "line-through" : "none"};
   &:hover {
     font-weight: bold;
   }
 `;
+
+const TodoHoverBox = styled.div`
+  .update:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  .delete:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+`
 
 const AddTodoItem = styled.div`
   width: 45px;
@@ -58,11 +81,14 @@ const AddTodoItem = styled.div`
 
 
 function Todoitem({ todayTodos }) {
+  const dispatch = useDispatch();
   const [showInput, setShowInput ]  = useState(false);
-
-
   const checkboxChange = (e) => {
     console.log(e.target.checked)
+  }
+  const handleDelete = (id) => {
+    console.log(id)
+    dispatch(deleteTodo(id))
   }
   return (
     <TodoItemBlock>
@@ -72,6 +98,10 @@ function Todoitem({ todayTodos }) {
             <TodoListBox key={todo.id}>
               <TodoCheckbox id={todo.id} checked={todo.isCompleted} onChange={checkboxChange}/>
               <TodoLabel htmlFor={todo.id} checked={todo.isCompleted}>{todo.title}</TodoLabel>
+              <TodoHoverBox>
+                <RxPencil2 size={20} className="icons update" />
+                <TfiTrash size={20} className="icons delete" onClick={() => handleDelete(todo.id)}/>
+              </TodoHoverBox>
             </TodoListBox>
           );
         })}
