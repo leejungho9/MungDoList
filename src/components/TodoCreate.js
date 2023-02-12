@@ -1,8 +1,9 @@
+import axios from 'axios';
 import React from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { addTodo } from '../commons/actions';
 
@@ -35,20 +36,27 @@ function TodoCreate({showInput, setShowInput}) {
     if (TodoInputRef.current !== null) {
       TodoInputRef.current.focus();
     }
-  });
+  },[TodoInputRef]);
 
   const handleChange = (e) => {
     const { value } = e.target;
     setAddTodoText(value);
   };
+  
+  const checkboxChange = (e) => {
+    setAddTodoCheck(e.target.checked)
+  }
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleClick();
     }
   };
+  
+  const todos = useSelector((state) => state.todos);
 
-  const handleClick = () => {
+  //json-server 에 todo data 추가
+  const handleClick = async () => {
     let today = new Date();
     let year = today.getFullYear();
     let month = ("0" + (today.getMonth() + 1)).slice(-2);
@@ -56,19 +64,20 @@ function TodoCreate({showInput, setShowInput}) {
     let fullDate = `${year}-${month}-${day}`;
   
     const todo = {
+      id: todos.length+1,
       title: addTodoText,
       description: null,
       isCompleted: addTodoCheck,
       date: fullDate,
     };
-    
-    dispatch(addTodo(todo));
+
+    const response = await axios.post("http://localhost:4000/todos", todo);
+    console.log(response.data)
+    dispatch(addTodo(response.data))
     setAddTodoText("");
     setShowInput(false);
   };
-  const checkboxChange = (e) => {
-    setAddTodoCheck(e.target.checked)
-  }
+
   return (
     <TodoCreateBlock>
       <AddCheckbox onChange={checkboxChange}/>
