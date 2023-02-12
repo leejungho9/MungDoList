@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import TodoContainer from "../components/TodoContainer";
 import TodoHead from "../components/TodoHead";
 import TodoMain from "../components/TodoMain";
-import TodoMainList from "../components/TodoMainList";
+import TodoList from "../components/TodoList";
 import useCookies from "react-cookie/cjs/useCookies";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { getAllTodos } from "../commons/actions";
+import axios from "axios";
 
-function Main(props) {
+function Main() {
   const [isMain, setIsMain] = useState(true);
   const [hasCookies, setHasCookies] = useState(true);
   //useCookies Hook을 이용해 쿠키 목록 불러오기
@@ -34,6 +37,8 @@ function Main(props) {
     setHasCookies(false);
   }, []);
 
+
+
   return (
     <TodoContainer>
       <TodoHead />
@@ -43,7 +48,7 @@ function Main(props) {
         closeModalUntilExpires={closeModalUntilExpires}
         />
         )}
-      {hasCookies && <TodoMainList />}
+      {hasCookies && <TodoList />}
     </TodoContainer>
   );
 }
