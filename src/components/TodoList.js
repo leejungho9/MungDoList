@@ -5,7 +5,6 @@ import { RiHeartAddLine } from "react-icons/ri";
 import Todoitem from "./Todoitem";
 import { useDispatch, useSelector } from "react-redux";
 import TodoCreate from "./TodoCreate";
-import { getTodos } from "../api/todos";
 import axios from "axios";
 import { getAllTodos } from "../commons/actions";
 const TodoListBlock = styled.div`

@@ -7,6 +7,7 @@ export const GET_TODO = "GET_TODO";
 
 
 export const addTodo = (todo) => {
+  console.log(todo)
   return {
     type : ADD_TODO,
     payload : {

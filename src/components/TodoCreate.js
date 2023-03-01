@@ -62,7 +62,6 @@ function TodoCreate({showInput, setShowInput}) {
     let month = ("0" + (today.getMonth() + 1)).slice(-2);
     let day = ("0" + today.getDate()).slice(-2);
     let fullDate = `${year}-${month}-${day}`;
-  
     const todo = {
       id: todos.length+1,
       title: addTodoText,
@@ -70,6 +69,7 @@ function TodoCreate({showInput, setShowInput}) {
       isCompleted: addTodoCheck,
       date: fullDate,
     };
+    console.log(todo)
 
     const response = await axios.post("http://localhost:4000/todos", todo);
     console.log(response.data)
