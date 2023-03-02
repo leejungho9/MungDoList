@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# 🐶 멍 두 리 스 트 🐶
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🎯 목적
+- 사람을 위한 투두리스트가 아닌 반려견을 위한 투드리스트 웹앱
+- 반려견을 키우다 보면 하루에 필수적으로 해줘야 하는 일이 발생한다. 
+- 매일 해야 할 일들을 기록하고 완료해 나가면 더욱 체계적이고 즐거운 반려견 돌보기가 가능해진다.
+- 오늘 하루 반려견과 있었던 내용을 기록하면서 행복한 추억을 간직할 수 있다.
 
-## Available Scripts
+##  🛠 구현내용
+- `GET` 기록된 일정 불러오기
+- `POST` 새로운 일정 추가하기
+- `PATCH` 기존 일정 수정하기
+- `DELETE` 기존 일정 삭제하기
 
-In the project directory, you can run:
+##  🔧 추가기능
+- `json-server` 연결
+- `Redux` 사용
 
-### `npm start`
+## <span style=""> 🖥 **기술 스택** </span>
+| Html | CSS | JavaScript | React | Redux | Styled-<br>Components |
+| :---: | :---: | :---: | :---: | :---: | :---: | 
+| <img alt="Html" src ="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/440px-HTML5_logo_and_wordmark.svg.png" width="65" height="65" /> | <div style="display: flex; align-items: flex-start;"><img src="https://user-images.githubusercontent.com/111227745/210204643-4c3d065c-59ec-481d-ac13-cea795730835.png" alt="CSS" width="50" height="65" /></div> | <div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="75" height="75" /></div> | <div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="95" height="65" /></div> | <div style="display: flex; align-items: flex-start;"><img src="https://user-images.githubusercontent.com/71073027/222484672-bef92852-ba50-4024-b356-d9d05cbc12b2.png" alt="styled-components icon" width="95" height="65" /></div> |  <div style="display: flex; align-items: flex-start;"><img src="https://i.ibb.co/ydkG6cv/img.png" alt="styled-components icon" width="65" height="65" /></div> | 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  ✨ 페이지 및 기능동작
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+|**메인 페이지**|**기능동작**|
+|:---:|:---:|
+|<img width="100%" src="https://user-images.githubusercontent.com/71073027/222480806-839019be-c6c0-453c-8e5d-5c2012a3eda1.png"/>|<video width="100%" src="https://user-images.githubusercontent.com/71073027/222480833-ed842be6-5256-45cd-b8e8-1622a6b6be7f.mp4"/>|
